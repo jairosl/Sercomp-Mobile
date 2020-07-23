@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
-import { View, Text, SafeAreaView, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
-import Constants from 'expo-constants';
-import logo from '../../assets/LGSercomp.png'
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import logo from '../../assets/LGSercomp.png';
 
 const Singin = () => {
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
 
-  const [ email, setEmail ] = useState('')
-  const [ senha, setSenha ] = useState('')
+  function handleSubmit() {
+    console.log(email, senha);
+  }
 
   return (
     <>
-    <StatusBar style="light" />
+      <StatusBar style="light" />
       <SafeAreaView>
         <View style={Style.container}>
           <View style={Style.header}>
@@ -21,28 +31,37 @@ const Singin = () => {
           <View style={Style.main}>
             <View style={Style.form}>
               <Text style={Style.label}>Email:</Text>
-              <TextInput style={Style.input} placeholder='Digite seu Email' onChangeText={(text) => {
-                setEmail(text)
-              }} />
-        
+              <TextInput
+                style={Style.input}
+                placeholder="Digite seu Email"
+                onChangeText={(text) => {
+                  setEmail(text);
+                }}
+              />
+
               <Text style={Style.label}>Senha:</Text>
-              <TextInput style={Style.input} placeholder='Digite sua Senha' secureTextEntry
-              autoCorrect={false} onChangeText={(senha) => {setSenha(senha)}} />
+              <TextInput
+                style={Style.input}
+                placeholder="Digite sua Senha"
+                secureTextEntry
+                autoCorrect={false}
+                onChangeText={(text) => {
+                  setSenha(text);
+                }}
+              />
             </View>
-            
-            <TouchableOpacity style={Style.button}>
+
+            <TouchableOpacity style={Style.button} onPress={handleSubmit}>
               <Text style={Style.buttonText}>Entrar</Text>
             </TouchableOpacity>
-
-          </View>  
+          </View>
         </View>
-
       </SafeAreaView>
     </>
   );
-}
+};
 
-const Style = StyleSheet.create ({
+const Style = StyleSheet.create({
   container: {
     backgroundColor: '#5C3BA0',
     height: '100%',
@@ -57,7 +76,7 @@ const Style = StyleSheet.create ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: 30
+    paddingTop: 30,
   },
 
   imagelogo: {
@@ -69,7 +88,7 @@ const Style = StyleSheet.create ({
     fontSize: 22,
     letterSpacing: 0.5,
     marginVertical: 10,
-    color: '#fff'
+    color: '#fff',
   },
 
   input: {
@@ -77,7 +96,7 @@ const Style = StyleSheet.create ({
     borderRadius: 10,
     height: 40,
     width: 250,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
   },
 
   button: {
@@ -87,15 +106,14 @@ const Style = StyleSheet.create ({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
-    marginTop: 30
+    marginTop: 30,
   },
 
   buttonText: {
     color: '#fff',
     fontSize: 20,
-    letterSpacing: 0.5
-  }
-
-})
+    letterSpacing: 0.5,
+  },
+});
 
 export default Singin;
