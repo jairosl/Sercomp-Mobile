@@ -4,7 +4,11 @@ import logo from '../../assets/LGReduzida.png';
 
 import styles from './style';
 
-const Info = () => {
+const Info = ({ navigation }) => {
+  function handleSubmit() {
+    navigation.navigate('SignIn');
+  }
+
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -39,7 +43,7 @@ const Info = () => {
         </View>
 
         <View style={styles.containerButton}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={handleSubmit}>
             <Text style={styles.buttonText}>Sair</Text>
           </TouchableOpacity>
         </View>

@@ -30,11 +30,13 @@ const Singin = ({ navigation }) => {
         <StatusBar style="light" hidden />
 
         <View style={Style.container}>
-          <KeyboardAvoidingView behavior="position" style={{ flex: 1 }}>
-            <View style={Style.header}>
-              <Image source={logo} style={Style.imagelogo} />
-            </View>
-
+          <View style={Style.header}>
+            <Image source={logo} style={Style.imagelogo} />
+          </View>
+          <KeyboardAvoidingView
+            behavior="position"
+            style={{ marginBottom: 400 }}
+          >
             <View style={Style.main}>
               <View style={Style.form}>
                 <Text style={Style.label}>Email:</Text>
@@ -73,11 +75,12 @@ const Style = StyleSheet.create({
   container: {
     backgroundColor: '#5C3BA0',
     height: '100%',
+    alignItems: 'center',
   },
 
   header: {
     alignItems: 'center',
-    marginTop: 60,
+    marginTop: 100,
     marginBottom: 20,
   },
 
@@ -105,7 +108,7 @@ const Style = StyleSheet.create({
     borderRadius: 10,
     height: 40,
     width: windowWidth - 80,
-    padding: 5,
+    padding: 10,
     fontSize: 16,
   },
 
@@ -117,6 +120,7 @@ const Style = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 10,
     marginTop: 30,
+    marginBottom: 40,
   },
 
   buttonText: {
