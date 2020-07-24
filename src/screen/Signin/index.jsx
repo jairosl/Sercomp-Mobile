@@ -15,12 +15,13 @@ import logo from '../../assets/LGSercomp.png';
 
 const windowWidth = Dimensions.get('window').width;
 
-const Singin = () => {
+const Singin = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
   function handleSubmit() {
     console.log(email, senha);
+    navigation.navigate('Main');
   }
 
   return (
