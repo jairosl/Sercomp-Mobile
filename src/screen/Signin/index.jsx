@@ -7,9 +7,13 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  KeyboardAvoidingView,
+  Dimensions,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import logo from '../../assets/LGSercomp.png';
+
+const windowWidth = Dimensions.get('window').width;
 
 const Singin = () => {
   const [email, setEmail] = useState('');
@@ -21,40 +25,43 @@ const Singin = () => {
 
   return (
     <>
-      <StatusBar style="light" />
       <SafeAreaView>
+        <StatusBar style="light" hidden />
+
         <View style={Style.container}>
-          <View style={Style.header}>
-            <Image source={logo} style={Style.imagelogo} />
-          </View>
-
-          <View style={Style.main}>
-            <View style={Style.form}>
-              <Text style={Style.label}>Email:</Text>
-              <TextInput
-                style={Style.input}
-                placeholder="Digite seu Email"
-                onChangeText={(text) => {
-                  setEmail(text);
-                }}
-              />
-
-              <Text style={Style.label}>Senha:</Text>
-              <TextInput
-                style={Style.input}
-                placeholder="Digite sua Senha"
-                secureTextEntry
-                autoCorrect={false}
-                onChangeText={(text) => {
-                  setSenha(text);
-                }}
-              />
+          <KeyboardAvoidingView behavior="position" style={{ flex: 1 }}>
+            <View style={Style.header}>
+              <Image source={logo} style={Style.imagelogo} />
             </View>
 
-            <TouchableOpacity style={Style.button} onPress={handleSubmit}>
-              <Text style={Style.buttonText}>Entrar</Text>
-            </TouchableOpacity>
-          </View>
+            <View style={Style.main}>
+              <View style={Style.form}>
+                <Text style={Style.label}>Email:</Text>
+                <TextInput
+                  style={Style.input}
+                  placeholder="Digite seu Email"
+                  onChangeText={(text) => {
+                    setEmail(text);
+                  }}
+                />
+
+                <Text style={Style.label}>Senha:</Text>
+                <TextInput
+                  style={Style.input}
+                  placeholder="Digite sua Senha"
+                  secureTextEntry
+                  autoCorrect={false}
+                  onChangeText={(text) => {
+                    setSenha(text);
+                  }}
+                />
+              </View>
+
+              <TouchableOpacity style={Style.button} onPress={handleSubmit}>
+                <Text style={Style.buttonText}>Entrar</Text>
+              </TouchableOpacity>
+            </View>
+          </KeyboardAvoidingView>
         </View>
       </SafeAreaView>
     </>
@@ -69,7 +76,8 @@ const Style = StyleSheet.create({
 
   header: {
     alignItems: 'center',
-    marginTop: 80,
+    marginTop: 60,
+    marginBottom: 20,
   },
 
   main: {
@@ -80,8 +88,8 @@ const Style = StyleSheet.create({
   },
 
   imagelogo: {
-    width: 200,
-    height: 170,
+    width: 220,
+    height: 190,
   },
 
   label: {
@@ -95,8 +103,9 @@ const Style = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 10,
     height: 40,
-    width: 250,
-    paddingHorizontal: 10,
+    width: windowWidth - 80,
+    padding: 5,
+    fontSize: 16,
   },
 
   button: {
