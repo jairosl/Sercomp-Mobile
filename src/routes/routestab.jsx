@@ -1,8 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather, MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
+import 'react-native-gesture-handler';
 
 import Info from '../screen/Info';
+import Minicursos from '../screen/Minicursos';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +30,7 @@ export default function RoutesTab() {
       />
       <Tab.Screen
         name="minicurso"
-        component={Info}
+        component={Minicursos}
         options={{
           tabBarLabel: 'Seus Minicursos',
           tabBarIcon: ({ color, size }) => (
