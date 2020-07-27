@@ -5,6 +5,7 @@ import 'react-native-gesture-handler';
 
 import Info from '../screen/Info';
 import Minicursos from '../screen/Minicursos';
+import Palestras from '../screen/Palestra';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +41,7 @@ export default function RoutesTab() {
       />
       <Tab.Screen
         name="palestras"
-        component={Info}
+        component={Palestras}
         options={{
           tabBarLabel: 'Palestras',
           tabBarIcon: ({ color, size }) => (
