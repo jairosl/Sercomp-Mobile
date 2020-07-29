@@ -44,6 +44,7 @@ export default function RoutesTab({ info }) {
             <MaterialCommunityIcons name="teach" size={size} color={color} />
           ),
         }}
+        initialParams={info.dados}
       />
       <Tab.Screen
         name="palestras"
