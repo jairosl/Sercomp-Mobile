@@ -33,38 +33,40 @@ const Palestra = () => {
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{ paddingHorizontal: 20 }}
             >
-              {palestras.map((palestra) => (
-                <View style={style.card} key={palestra.titulo}>
-                  <View style={style.cardContainer}>
-                    <Text style={style.cardLabel}>Título</Text>
-                    <Text style={style.cardData}>{palestra.titulo}</Text>
-                  </View>
-                  <View style={style.cardContainer}>
-                    <Text style={style.cardLabel}>Palestrante</Text>
-                    <Text style={style.cardData}>
-                      {palestra.nome_palestrante}
-                    </Text>
-                  </View>
-                  <View style={style.cardContainer}>
-                    <Text style={style.cardLabel}>Sala</Text>
-                    <Text style={style.cardData}>{palestra.sala}</Text>
-                  </View>
-                  <View style={style.cardDataHora}>
+              {palestras.map((palestra, i) => (
+                <View key={i}>
+                  <View style={style.card}>
                     <View style={style.cardContainer}>
-                      <Text style={style.cardLabel}>Data</Text>
-                      <Text style={style.cardData}>{palestra.data}</Text>
+                      <Text style={style.cardLabel}>Título</Text>
+                      <Text style={style.cardData}>{palestra.titulo}</Text>
                     </View>
                     <View style={style.cardContainer}>
-                      <Text style={style.cardLabel}>Horário</Text>
-                      <Text style={style.cardData}>{palestra.horario}</Text>
-                    </View>
-                  </View>
-                  <View style={style.cardContainer}>
-                    <Text style={style.cardLabel}>Descrição</Text>
-                    <View style={style.cardData}>
+                      <Text style={style.cardLabel}>Palestrante</Text>
                       <Text style={style.cardData}>
-                        {palestra.descricao_palestrante}
+                        {palestra.nome_palestrante}
                       </Text>
+                    </View>
+                    <View style={style.cardContainer}>
+                      <Text style={style.cardLabel}>Sala</Text>
+                      <Text style={style.cardData}>{palestra.sala}</Text>
+                    </View>
+                    <View style={style.cardDataHora}>
+                      <View style={style.cardContainer}>
+                        <Text style={style.cardLabel}>Data</Text>
+                        <Text style={style.cardData}>{palestra.data}</Text>
+                      </View>
+                      <View style={style.cardContainer}>
+                        <Text style={style.cardLabel}>Horário</Text>
+                        <Text style={style.cardData}>{palestra.horario}</Text>
+                      </View>
+                    </View>
+                    <View style={style.cardContainer}>
+                      <Text style={style.cardLabel}>Descrição</Text>
+                      <View style={style.cardData}>
+                        <Text style={style.cardData}>
+                          {palestra.descricao_palestrante}
+                        </Text>
+                      </View>
                     </View>
                   </View>
                 </View>

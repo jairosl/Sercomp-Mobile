@@ -36,38 +36,40 @@ const Minicursos = ({ route }) => {
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{ paddingHorizontal: 20 }}
             >
-              {minicursos.map((minicurso) => (
-                <View style={styles.card} key={minicurso.titulo}>
-                  <View style={styles.cardContainer}>
-                    <Text style={styles.cardLabel}>Título</Text>
-                    <Text style={styles.cardData}>{minicurso.titulo}</Text>
-                  </View>
-                  <View style={styles.cardContainer}>
-                    <Text style={styles.cardLabel}>Professor</Text>
-                    <Text style={styles.cardData}>
-                      {minicurso.nome_professor}
-                    </Text>
-                  </View>
-                  <View style={styles.cardContainer}>
-                    <Text style={styles.cardLabel}>Sala</Text>
-                    <Text style={styles.cardData}>{minicurso.sala}</Text>
-                  </View>
-                  <View style={styles.cardDataHora}>
+              {minicursos.map((minicurso, i) => (
+                <View key={i}>
+                  <View style={styles.card}>
                     <View style={styles.cardContainer}>
-                      <Text style={styles.cardLabel}>Data</Text>
-                      <Text style={styles.cardData}>{minicurso.data}</Text>
+                      <Text style={styles.cardLabel}>Título</Text>
+                      <Text style={styles.cardData}>{minicurso.titulo}</Text>
                     </View>
                     <View style={styles.cardContainer}>
-                      <Text style={styles.cardLabel}>Horário</Text>
-                      <Text style={styles.cardData}>{minicurso.horario}</Text>
-                    </View>
-                  </View>
-                  <View style={styles.cardContainer}>
-                    <Text style={styles.cardLabel}>Descrição</Text>
-                    <View style={styles.cardData}>
+                      <Text style={styles.cardLabel}>Professor</Text>
                       <Text style={styles.cardData}>
-                        {minicurso.descricao_professor}
+                        {minicurso.nome_professor}
                       </Text>
+                    </View>
+                    <View style={styles.cardContainer}>
+                      <Text style={styles.cardLabel}>Sala</Text>
+                      <Text style={styles.cardData}>{minicurso.sala}</Text>
+                    </View>
+                    <View style={styles.cardDataHora}>
+                      <View style={styles.cardContainer}>
+                        <Text style={styles.cardLabel}>Data</Text>
+                        <Text style={styles.cardData}>{minicurso.data}</Text>
+                      </View>
+                      <View style={styles.cardContainer}>
+                        <Text style={styles.cardLabel}>Horário</Text>
+                        <Text style={styles.cardData}>{minicurso.horario}</Text>
+                      </View>
+                    </View>
+                    <View style={styles.cardContainer}>
+                      <Text style={styles.cardLabel}>Descrição</Text>
+                      <View style={styles.cardData}>
+                        <Text style={styles.cardData}>
+                          {minicurso.descricao_professor}
+                        </Text>
+                      </View>
                     </View>
                   </View>
                 </View>

@@ -40,6 +40,7 @@
         "no-param-reassign": "off",
         "no-console":"off",
         "no-use-before-define": "off",
-        "react/style-prop-object": "off"
+        "react/style-prop-object": "off",
+        "react/no-array-index-key": "off"
       }
 }
