@@ -33,7 +33,7 @@ export default function RoutesTab() {
         name="minicurso"
         component={Minicursos}
         options={{
-          tabBarLabel: 'Seus Minicursos',
+          tabBarLabel: 'Meus Minicursos',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="teach" size={size} color={color} />
           ),
