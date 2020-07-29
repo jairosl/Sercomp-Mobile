@@ -9,7 +9,7 @@ import Palestras from '../screen/Palestra';
 
 const Tab = createBottomTabNavigator();
 
-export default function RoutesTab() {
+export default function RoutesTab({ info }) {
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -33,6 +33,7 @@ export default function RoutesTab() {
             <Feather name="info" size={size} color={color} />
           ),
         }}
+        initialParams={info.dados}
       />
       <Tab.Screen
         name="minicurso"

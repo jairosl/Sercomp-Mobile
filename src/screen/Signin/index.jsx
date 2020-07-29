@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import logo from '../../assets/LGSercomp.png';
+import api from '../../services/api';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -19,9 +20,13 @@ const Singin = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  function handleSubmit() {
-    console.log(email, senha);
-    navigation.navigate('Main');
+  async function handleSubmit() {
+    try {
+      const { data } = await api.post('/aluno', { email, senha });
+      navigation.navigate('Main', { dados: data });
+    } catch (Error) {
+      console.log(Error.response.data.error);
+    }
   }
 
   return (
