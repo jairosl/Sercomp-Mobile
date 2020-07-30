@@ -34,6 +34,16 @@
 
 <br>
 
+## :eye: Screens
+  * Sing In
+  * Listing all participant data
+  * My Mini Course
+  * My Lecture
+  
+  
+
+<br>
+
 ## :closed_book: Commands
 
 
@@ -49,4 +59,4 @@
 
 ## :memo: License
 
-This project is under the MIT license. See the [LICENSE](LICENSE.md) file for more details
+This project is under the MIT license. See the [LICENSE](LICENSE) file for more details
