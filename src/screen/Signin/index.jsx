@@ -40,7 +40,7 @@ const Singin = ({ navigation }) => {
           </View>
           <KeyboardAvoidingView
             behavior="position"
-            style={{ marginBottom: 400 }}
+            style={{ marginBottom: 40 }}
           >
             <View style={Style.main}>
               <View style={Style.form}>
@@ -51,6 +51,9 @@ const Singin = ({ navigation }) => {
                   onChangeText={(text) => {
                     setEmail(text);
                   }}
+                  keyboardType="email-address"
+                  autoCapitalize="none"
+                  autoCompleteType="email"
                 />
 
                 <Text style={Style.label}>Senha:</Text>
@@ -62,9 +65,13 @@ const Singin = ({ navigation }) => {
                   onChangeText={(text) => {
                     setSenha(text);
                   }}
+                  autoCapitalize="none"
+                  autoCompleteType="password"
+                  returnKeyType="send"
                 />
               </View>
-
+            </View>
+            <View style={Style.ContainerButton}>
               <TouchableOpacity style={Style.button} onPress={handleSubmit}>
                 <Text style={Style.buttonText}>Entrar</Text>
               </TouchableOpacity>
@@ -81,6 +88,7 @@ const Style = StyleSheet.create({
     backgroundColor: '#5C3BA0',
     height: '100%',
     alignItems: 'center',
+    justifyContent: 'space-around',
   },
 
   header: {
@@ -111,16 +119,21 @@ const Style = StyleSheet.create({
   input: {
     backgroundColor: '#fff',
     borderRadius: 10,
-    height: 40,
+    height: 45,
     width: windowWidth - 80,
     padding: 10,
-    fontSize: 16,
+    fontSize: 18,
+  },
+
+  ContainerButton: {
+    width: '100%',
+    alignItems: 'flex-end',
   },
 
   button: {
     backgroundColor: '#BE8E00',
     height: 40,
-    width: 180,
+    width: 140,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
